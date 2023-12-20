@@ -10,7 +10,7 @@ searchButton.on("click", function (e) {
   e.preventDefault();
   var searchInputValue = searchInput.val().trim();
   var queryURL =
-    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     searchInputValue +
     "&appid=5623fb7d8675d169764d733cafc79bab&units=metric";
     fetch(queryURL)
@@ -98,7 +98,7 @@ function init() {
   $("#history").on("click", ["data-cityname"], function (e) {
     var cityData = e.target.dataset.cityname;
     var queryURL =
-      "http://api.openweathermap.org/data/2.5/forecast?q=" +
+      "https://api.openweathermap.org/data/2.5/forecast?q=" +
       cityData +
       "&appid=5623fb7d8675d169764d733cafc79bab&units=metric";
     fetch(queryURL)
@@ -151,6 +151,7 @@ function init() {
         <p> Temp: ${temperature}°c</p>
         <p> Humidity: ${humidity}%</p>
         <p> Wind Speed: ${wind}Mph</p>
+
         </div>`);
 
           $("#forecast").append(disply);
